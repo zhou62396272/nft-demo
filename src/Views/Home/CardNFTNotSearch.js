@@ -10,8 +10,9 @@ export default function CardNFTHome({ token }) {
   const [detailNFT, setDetailNFT] = useState(null);
 
   useEffect(() => {
+    let isUnmount = false; 
     async function fetchDetail() {
-      if (!!token && !!token.tokenURI) {
+      if (!!token && !!token.tokenURI && isUnmount) {
         try {
           let req = await axios.get(token.tokenURI);
           setDetailNFT(req.data);
@@ -23,7 +24,8 @@ export default function CardNFTHome({ token }) {
       }
     }
     fetchDetail();
-  }, [token]);
+    return () => isUnmount = true;
+  }, [token,token.tokenURI]);
 
   return !!detailNFT ? (
     <Link to={`/token/${token.addressToken}/${token.index}`}>

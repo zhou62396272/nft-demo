@@ -70,7 +70,7 @@ export default function ERC721({ tokens }) {
 
   return (
     <div>
-      <Row gutter={[16, 24]} style={{ margin: 0 }}>
+      <Row gutter={[16, 24]} >
         {!!afterFilter ? (
           afterFilter.map((token, index) => (
             <ERC721Card key={index} token={token} strSearch={strSearch} />
