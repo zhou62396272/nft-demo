@@ -1,5 +1,7 @@
 import BackButton from 'Components/BackButton';
 import { useHistory } from 'react-router';
+import Single from '../../Assets/images/single.png';
+import More from '../../Assets/images/more.png';
 import './index.css';
 
 export default function Create() {
@@ -22,7 +24,7 @@ export default function Create() {
         <div className='justifyContentSa'>
           <div className='box input-mode-bc slt center' onClick={() => push('/create/erc721/')}>
             <img
-              src='https://rarible.com/static/2a78e39400f51f1dbeba13832f421092.png'
+              src={Single}
               alt='single'
             />
             <p>Single</p>
@@ -30,7 +32,7 @@ export default function Create() {
 
           <div className='box input-mode-bc slt center' onClick={() => push('/create/erc1155')}>
             <img
-              src='https://rarible.com/static/48dc30c106da96755b60ead8627c8888.png'
+              src={More}
               alt='multiple'
             />
             <p>Multiple</p>
